@@ -12,7 +12,7 @@ export class EmailLog {
 
     @Column({ 
         type: "enum", 
-        enum: ["SENT", "OPENED", "CLICKED", "FAILED"], 
+        enum: ["SENT", "OPENED", "CLICKED", "FAILED", "REPLIED"], 
         default: "SENT" 
     })
     status: "SENT" | "OPENED" | "CLICKED" | "FAILED";

@@ -14,7 +14,19 @@ export class Campaign {
     @Column({ type: "varchar" })
     name: string;
 
-    @Column({ type: "enum", enum: ["DRAFT", "RUNNING", "PAUSED", "COMPLETED"], default: "DRAFT" })
+    // 👇 YE COLUMN ADD KIYA HAI (Hiring vs Sales ke liye)
+    @Column({ 
+        type: "enum", 
+        enum: ["RECRUITMENT", "SALES", "NEWSLETTER", "OTHER"], 
+        default: "OTHER" 
+    })
+    type: "RECRUITMENT" | "SALES" | "NEWSLETTER" | "OTHER";
+
+    @Column({ 
+        type: "enum", 
+        enum: ["DRAFT", "RUNNING", "PAUSED", "COMPLETED"], 
+        default: "DRAFT" 
+    })
     status: "DRAFT" | "RUNNING" | "PAUSED" | "COMPLETED";
 
     @CreateDateColumn()
