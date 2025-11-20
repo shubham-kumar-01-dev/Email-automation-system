@@ -6,14 +6,23 @@ export class Lead {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({ type: "int" })
+    userId: number;
+
     @Column({ type: "varchar" })
     email: string;
 
     @Column({ type: "varchar", nullable: true })
-    firstName: string;
+    name: string;
 
     @Column({ type: "varchar", nullable: true })
     companyName: string;
+
+    @Column({
+        type: "json",
+        nullable: true,
+    })
+    customFields: Record<string, any> | null;
 
     @Column({ 
         type: "enum", 
