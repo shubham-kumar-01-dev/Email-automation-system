@@ -15,6 +15,6 @@ export const AppDataSource = new DataSource({
   password: 'root@123',
   database: 'outreach_db',
   synchronize: false,
-  logging: true,
+  logging: false,
   entities: [Mailbox,Campaign,CampaignStep,Lead,EmailLog],
 });

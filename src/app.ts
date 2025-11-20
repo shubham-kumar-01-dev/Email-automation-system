@@ -4,6 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import campaignRoutes from "./routes/campaignRoutes";
 import leadRoutes from "./routes/leadRoutes";
+import trackingRoutes from "./routes/trackingRoutes";
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.get('/', (_req, res) => res.send('Email Automation Service is running'));
 // Ab jab bhi koi request /api/campaigns par aayegi, wo campaignRoutes par jayegi
 app.use("/api/campaigns", campaignRoutes);
 app.use("/api/leads", leadRoutes);
-
+app.use("/api/track", trackingRoutes);
 // Global Error Handler
 app.use((err: any, _req: any, res: any, _next: any) => {
   console.error('Unhandled error:', err);

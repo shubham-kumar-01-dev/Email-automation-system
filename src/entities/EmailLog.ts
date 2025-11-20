@@ -15,7 +15,7 @@ export class EmailLog {
         enum: ["SENT", "OPENED", "CLICKED", "FAILED", "REPLIED"], 
         default: "SENT" 
     })
-    status: "SENT" | "OPENED" | "CLICKED" | "FAILED";
+    status: "SENT" | "OPENED" | "CLICKED" | "FAILED" | "REPLIED";
 
     @CreateDateColumn()
     sentAt: Date;
